@@ -1,0 +1,13 @@
+/* Original Uspenka Service identity, supplied by the owner. */
+:root{--blue:#007cae}
+header .brand{gap:14px}
+header .brand-logo{width:67px;height:62px;object-fit:contain;flex:none;background:#fff}
+header .brand span{font-size:13px;letter-spacing:.035em}
+header .brand small{font-size:8px;letter-spacing:.06em}
+.footer-brand{display:flex;align-items:center;gap:22px}
+.footer-logo{width:104px;height:96px;object-fit:contain;background:#fff;border-radius:3px;padding:6px;flex:none}
+.footer-brand .eyebrow{margin-bottom:9px}
+.footer-brand h2{font-size:30px}
+.footer-brand p{margin-top:8px}
+@media(max-width:700px){header .brand{gap:9px}header .brand-logo{width:49px;height:45px}header .brand span{font-size:10px;letter-spacing:.02em}header .brand small{font-size:6px;letter-spacing:.02em}.footer-brand{gap:16px}.footer-logo{width:86px;height:80px}.footer-brand h2{font-size:24px}.footer-brand p{font-size:12px}}
+@media(max-width:380px){header .brand span{font-size:9px}header .brand small{font-size:5.5px}header .brand-logo{width:43px;height:40px}header .brand{gap:7px}}
