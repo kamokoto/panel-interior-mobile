@@ -1,0 +1,33 @@
+/* Compact construction block: one screen, stages switch with buttons or a swipe. Loaded after cinema.css and film.css. */
+.compact-cinema{height:auto;margin-top:0;scroll-margin-top:calc(var(--pin,58px) + 8px)}
+.compact-cinema .cinema-pin{position:relative;top:auto;height:auto;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:0;grid-template-rows:auto auto;align-items:stretch;padding:0 4.45vw 0 0;overflow:visible}
+.compact-cinema .cinema-kicker{position:absolute;top:22px;left:4.45vw;z-index:6}
+.compact-cinema .stage,.compact-cinema.manual-model .stage,.compact-cinema.film-cinema .stage,.compact-cinema.film-cinema.manual-model .stage{position:relative;left:auto;top:auto;bottom:auto;width:100%;max-width:100%;height:auto;grid-column:1;grid-row:1;aspect-ratio:4/3;max-height:min(600px,calc(100svh - var(--pin,58px) - 120px));min-height:360px;min-width:0;z-index:1;overflow:hidden}
+.compact-cinema .stage:after{display:none}
+.compact-cinema .stage-tools{left:auto;right:16px;bottom:16px;z-index:6}
+.compact-cinema .cinema-copy{position:relative;left:auto;right:auto;top:auto;bottom:auto;grid-column:2;grid-row:1;display:flex;align-items:center;padding:60px 0 60px clamp(24px,3vw,48px);min-width:0;pointer-events:auto}
+.compact-cinema .cinema-copy{display:grid;align-items:center}
+.compact-cinema .cinema-panel,.compact-cinema .cinema-panel.active{display:block;grid-area:1/1;visibility:hidden}
+.compact-cinema .cinema-panel.active{visibility:visible}
+.compact-cinema .cinema-next{display:block;width:100%;margin-top:24px;padding:12px 0 0;border:0;border-top:1px solid #34414f;background:none;color:inherit;text-align:left;cursor:pointer;font:inherit}
+.compact-cinema .cinema-next strong{color:#91afff}
+.compact-cinema .cinema-next p{margin-top:6px}
+.compact-cinema .cinema-next:hover p{color:#f4f6f8}
+.compact-cinema .story-tabs,.compact-cinema.cinema .story-tabs{position:relative;left:auto;right:auto;bottom:auto;grid-column:1/-1;grid-row:2;margin:0 0 0 4.45vw;padding-top:0;z-index:8}
+.compact-cinema .scheme-note,.compact-cinema.cinema .scheme-note{position:relative;left:auto;right:auto;bottom:auto;grid-column:1/-1;grid-row:3;margin:0 0 0 4.45vw;padding:8px 0 18px}
+.compact-cinema .scroll-cue{display:none}
+.compact-cinema .anatomy-caption{bottom:60px}
+@media(max-width:1050px) and (min-width:701px){.compact-cinema .cinema-pin{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}.compact-cinema .cinema-copy{padding-top:48px;padding-bottom:48px}}
+@media(max-width:700px){
+  .compact-cinema .cinema-pin{display:block;padding:0}
+  .compact-cinema .stage,.compact-cinema.manual-model .stage,.compact-cinema.film-cinema .stage,.compact-cinema.film-cinema.manual-model .stage{position:relative;width:100%;height:auto;aspect-ratio:4/3;min-height:0;max-height:62svh}
+  .compact-cinema .stage:after{display:block;top:auto;left:0;bottom:0;width:100%;height:15%;background:linear-gradient(0deg,#14191f,transparent)}
+  .compact-cinema .stage-tools,.compact-cinema.film-cinema .stage-tools{right:12px;bottom:10px}
+  .compact-cinema .cinema-copy,.compact-cinema.film-cinema .cinema-copy{position:relative;left:auto;right:auto;top:auto;bottom:auto;display:grid;align-items:start;overflow:visible;padding:18px 20px 6px;touch-action:pan-y}
+  .compact-cinema .cinema-panel h2{max-width:none}
+  .compact-cinema .cinema-next{margin-top:18px}
+  .compact-cinema .story-tabs,.compact-cinema.cinema .story-tabs{margin:12px 20px 0}
+  .compact-cinema .scheme-note,.compact-cinema.cinema .scheme-note{margin:0 20px;padding:10px 0 16px}
+  body[data-page=product].construction-under-bar .product-bar{transform:translateY(110%);visibility:hidden;transition:transform 250ms var(--ease-out),visibility 0s 250ms}
+}
+@media(max-width:700px) and (max-height:720px){.compact-cinema .stage,.compact-cinema.film-cinema .stage{height:auto;max-height:58svh}.compact-cinema .cinema-copy,.compact-cinema.film-cinema .cinema-copy{top:auto;bottom:auto}}

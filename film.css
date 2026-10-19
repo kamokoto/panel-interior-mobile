@@ -45,13 +45,13 @@ html:has(body[data-page=product]){scroll-behavior:auto}
  .film-cinema .cinema-copy{left:20px;right:20px;top:47%;bottom:100px}
  .film-cinema .cinema-panel h2{font-size:27px}
  .film-cinema .model-callouts g:nth-child(2){display:none}
- .film-cinema .model-callouts text{font-size:6px}
+ .film-cinema .model-callouts text{font-size:9px}
  .film-cinema .stage-tools{bottom:0;right:14px}
- .film-cinema .stage-tools button{min-height:44px;min-width:44px;font-size:9px}
- .film-detail-label{right:14px;bottom:54px;font-size:7px}
+ .film-cinema .stage-tools button{min-height:44px;min-width:44px;font-size:12px}
+ .film-detail-label{right:14px;bottom:54px;font-size:9px}
  .film-fit{width:100%;left:0}
 }
-@media(max-width:700px) and (max-height:720px){.film-cinema .stage{height:43%}.film-cinema .cinema-copy{top:43%;bottom:82px}.film-cinema .cinema-panel h2{font-size:23px}.film-cinema .stage-tools button{font-size:8px}}
+@media(max-width:700px) and (max-height:720px){.film-cinema .stage{height:43%}.film-cinema .cinema-copy{top:43%;bottom:82px}.film-cinema .cinema-panel h2{font-size:23px}.film-cinema .stage-tools button{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.film-camera,.film-object,.panel-unit,.panel-skin-motion{transition:none}}
 
 /* These archive images depict complete products, never decoration textures. */
@@ -84,6 +84,6 @@ html:has(body[data-page=product]){scroll-behavior:auto}
 .anatomy-roi{fill:#568fe51f;stroke:#4b81c9;stroke-width:1.5;stroke-dasharray:5 4;opacity:0}
 .anatomy-edge{fill:none;stroke:#4b81c9;stroke-width:1.8;opacity:0}
 .anatomy-cinema .film-detail-label{bottom:30px}
-@media(max-width:700px){.anatomy-caption{left:14px;bottom:55px;font-size:7px;padding:5px 7px}.anatomy-caption small{font-size:6px}.anatomy-cinema .film-detail-label{display:none}.anatomy-cinema .model-callouts g:nth-child(2){display:block}.anatomy-cinema .model-callouts text{font-size:6px}}
+@media(max-width:700px){.anatomy-caption{left:14px;bottom:55px;font-size:9px;padding:5px 7px}.anatomy-caption small{font-size:9px}.anatomy-cinema .film-detail-label{display:none}.anatomy-cinema .model-callouts g:nth-child(2){display:block}.anatomy-cinema .model-callouts text{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.anatomy-model,.anatomy-caption,.anatomy-photo{transition:none}}
 @media(max-width:700px) and (max-height:720px){.anatomy-caption{display:none}}

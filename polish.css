@@ -1,0 +1,105 @@
+/* Visual polish, loaded last: one type family, rounded shapes, motion. */
+:root{--r-xs:6px;--r-sm:10px;--r-md:14px;--r-lg:18px;--r-xl:24px;--shadow-soft:0 1px 2px #16283a0a,0 8px 24px #16283a0f;--shadow-lift:0 2px 6px #16283a12,0 18px 40px #16283a1f;--ease-out:cubic-bezier(.23,1,.32,1)}
+
+/* ---------- Type: Inter everywhere, no typewriter labels ---------- */
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;font-variant-numeric:proportional-nums;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.anatomy-caption,.channel-grid h3,.cinema-kicker,.corner-label,.specimen-caption,.direction-index,.eyebrow,.kind,.film-detail-label,.hero-visual figcaption span,.number,.photo-label,.quality-points article>span,.scroll-cue,.stage-top,.story-tabs b{font-family:Inter,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;font-weight:600;letter-spacing:.06em}
+.model-callouts text,.anatomy-fallback text{font-family:Inter,system-ui,Arial,sans-serif;font-weight:600;letter-spacing:.04em}
+.eyebrow{font-size:12px;letter-spacing:.1em}
+.kind,.card-copy .kind{letter-spacing:.07em;font-weight:600}
+h1,h2,h3{font-feature-settings:'ss01';text-wrap:balance}
+h1{font-weight:620;letter-spacing:-.035em}
+h2{font-weight:600;letter-spacing:-.03em}
+h3{font-weight:600;letter-spacing:-.015em}
+p,li,dd,dt{text-wrap:pretty}
+.hero-facts b,.direction-link b,.story-tabs b,.cinema-panel .eyebrow,[data-count]{font-variant-numeric:lining-nums proportional-nums;font-feature-settings:'ss01'}
+.hero-facts b{font-weight:600;letter-spacing:-.04em}
+.cinema-panel .eyebrow{letter-spacing:.08em;text-transform:uppercase}
+.specs dd,.card-spec b,.cinema-facts dd{font-weight:550}
+
+/* ---------- Rounded shapes ---------- */
+.button,.save,.selection-open,.nav-toggle,.header-phone,.load-more,.photo-switch button,.dialog-actions .button,.product-bar .button,.cinema-next{border-radius:var(--r-sm)}
+input,select,textarea{border-radius:var(--r-sm)}
+.tabs a{border-radius:999px}
+.selection-open span{border-radius:999px}
+.product-card{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-soft);border-color:#e3e8ed}
+.product-card .save{border-radius:var(--r-sm)}
+.product-photo{border-bottom-color:#e8edf1}
+.photo-label,.corner-label,.specimen-caption,.number,.cinema-kicker{border-radius:var(--r-xs)}
+.specimen{border-radius:var(--r-xl);border-color:#e1e7ec}
+.photo-switch button{overflow:hidden}
+.direction-image,.decor-image{border-radius:var(--r-md);overflow:hidden}
+.decor-image{border-color:#e3e8ed}
+.hero-visual{border-radius:var(--r-xl);overflow:hidden}
+.application-panel{border-radius:var(--r-xl);overflow:hidden}
+.application-panel figure,.application-panel figure img{border-radius:0}
+.use-col,.maker-grid article,.family,.channel-grid>div,.company-details{border-radius:var(--r-lg)}
+.use-col,.maker-grid article{box-shadow:var(--shadow-soft);border-color:#e3e8ed}
+.marketing-cta{border-radius:var(--r-xl)}
+.map-shell,.map-shell iframe{border-radius:var(--r-lg);overflow:hidden}
+.pattern-filter button{border-radius:999px}
+dialog{border-radius:var(--r-xl);border:0;box-shadow:0 30px 80px #0b182640}
+dialog::backdrop{background:#0f1a2580;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.selection-row img{border-radius:var(--r-xs)}
+#status{border-radius:var(--r-md)}
+.main-nav{border-radius:0 0 var(--r-lg) var(--r-lg)}
+.price-note,.technical-note{border-radius:0}
+.footer-logo{border-radius:0}
+
+/* Construction block: a rounded dark card instead of a full-bleed band */
+.compact-cinema{margin:48px 4.45vw 0;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 30px 70px #0b182633}
+.compact-cinema .cinema-pin{border-radius:inherit}
+.compact-cinema .story-tabs,.compact-cinema.cinema .story-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 10px}
+.compact-cinema .story-tabs a{border-radius:0;transition:color 200ms var(--ease-out),border-color 200ms var(--ease-out)}
+.model-callouts rect{rx:5px;ry:5px}
+
+/* ---------- Wall preview: every panel shows its whole photo ---------- */
+.wall-room{background:linear-gradient(180deg,#eef1f4,#e3e8ec);border-radius:var(--r-xl);padding:clamp(18px,3vw,40px);display:flex;justify-content:center}
+.wall,.wall.is-single{display:flex;align-items:stretch;justify-content:center;width:100%;max-width:calc(min(560px,58svh) * var(--sum));height:auto;margin:0 auto;background:none;box-shadow:0 24px 50px #1a2a3a24;border-radius:var(--r-sm);overflow:hidden;grid-template-columns:none}
+.wall-panel{flex:calc(var(--ratio) * 100) 1 0;aspect-ratio:var(--ratio);min-width:0;position:relative;overflow:hidden}
+.wall-panel img{width:100%;height:100%;object-fit:fill}
+.wall-floor{display:none}
+
+/* ---------- Motion (only when the visitor allows it) ---------- */
+.button,.save,.selection-open,.nav-toggle,.header-phone,.tabs a,.pattern-filter button,.cinema-next{transition:transform 160ms var(--ease-out),background-color 200ms var(--ease-out),border-color 200ms var(--ease-out),color 200ms var(--ease-out),box-shadow 200ms var(--ease-out)}
+.button:active,.save:active,.selection-open:active,.nav-toggle:active,.header-phone:active,.tabs a:active,.pattern-filter button:active,.cinema-next:active,.decor-tile:active{transform:scale(.97)}
+.product-card{transition:transform 260ms var(--ease-out),box-shadow 260ms var(--ease-out)}
+.product-photo img,.product-photo .decor-fill img{transition:transform 500ms var(--ease-out)}
+@media(hover:hover) and (pointer:fine){
+  .product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .product-card:hover .product-photo>img,.product-card:hover .decor-fill img{transform:scale(1.04)}
+  .button:hover{box-shadow:0 8px 20px #0a5c8a2e}
+  .button.ghost:hover{box-shadow:none;border-color:#93a7ba}
+  .use-col,.maker-grid article{transition:transform 260ms var(--ease-out),box-shadow 260ms var(--ease-out)}
+  .use-col:hover,.maker-grid article:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes settle{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
+  .marketing-hero .hero-copy>*{animation:rise 700ms var(--ease-out) both}
+  .marketing-hero .hero-copy>:nth-child(2){animation-delay:70ms}
+  .marketing-hero .hero-copy>:nth-child(3){animation-delay:140ms}
+  .marketing-hero .hero-copy>:nth-child(4){animation-delay:210ms}
+  .marketing-hero .hero-copy>:nth-child(5){animation-delay:280ms}
+  .hero-visual img{animation:settle 1100ms var(--ease-out) both}
+  .catalog-heading>*,.product-layout>*{animation:rise 600ms var(--ease-out) both}
+  .catalog-heading>:nth-child(2),.product-layout>:nth-child(2){animation-delay:90ms}
+  html.motion .reveal{opacity:0;transform:translateY(22px)}
+  html.motion .reveal.in{opacity:1;transform:none;transition:opacity 600ms var(--ease-out),transform 700ms var(--ease-out);transition-delay:calc(var(--d,0) * 70ms)}
+  html.motion .wall-panel.reveal{transform:translateY(14px) scale(.98)}
+  html.motion .wall-panel.reveal.in{transform:none}
+}
+
+/* ---------- Mobile ---------- */
+@media(max-width:700px){
+  .eyebrow{font-size:11px}
+  .product-card{border-radius:var(--r-md)}
+  .specimen{border-radius:var(--r-lg)}
+  .compact-cinema{margin:28px 12px 0;border-radius:var(--r-lg)}
+  .compact-cinema .story-tabs,.compact-cinema.cinema .story-tabs{gap:0 8px}
+  .wall-room{margin:0 -8px;padding:16px;border-radius:var(--r-lg)}
+  .wall,.wall.is-single{max-width:calc(min(420px,52svh) * var(--sum-mobile))}
+  .wall-panel.is-edge{display:none}
+  .wall.is-single{max-width:calc(min(420px,56svh) * var(--sum))}
+  .hero-visual,.application-panel,.marketing-cta{border-radius:var(--r-lg)}
+}
