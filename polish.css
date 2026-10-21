@@ -81,7 +81,7 @@ dialog::backdrop{background:#0f1a2580;-webkit-backdrop-filter:blur(3px);backdrop
   .marketing-hero .hero-copy>:nth-child(3){animation-delay:140ms}
   .marketing-hero .hero-copy>:nth-child(4){animation-delay:210ms}
   .marketing-hero .hero-copy>:nth-child(5){animation-delay:280ms}
-  .hero-visual img{animation:settle 1100ms var(--ease-out) both}
+  .hero-visual img,.hero-image{animation:settle 1100ms var(--ease-out) both}
   .catalog-heading>*,.product-layout>*{animation:rise 600ms var(--ease-out) both}
   .catalog-heading>:nth-child(2),.product-layout>:nth-child(2){animation-delay:90ms}
   html.motion .reveal{opacity:0;transform:translateY(22px)}
@@ -157,3 +157,41 @@ html.motion .decor-track .reveal{transform:none}
 .room-plane.is-ground::after{content:'';position:absolute;inset:0;background-image:linear-gradient(90deg,#00000045 0 2px,transparent 2px),linear-gradient(0deg,#00000045 0 2px,transparent 2px);background-size:100px 100px}
 @media(hover:hover) and (pointer:fine){.room-tabs button:hover{border-color:#9fb3c8}}
 @media(max-width:700px){.room-try{padding-top:32px}.room-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -20px 12px;padding:0 20px 4px}.room-tabs::-webkit-scrollbar{display:none}.room-tabs button{flex:none;font-size:12px;min-height:38px;padding:8px 13px}.room{border-radius:var(--r-lg);margin:0 -8px}}
+
+/* Home hero, 21.10.2026: the picture fills the first screen, the text sits over it */
+.marketing-hero{position:relative;display:flex;align-items:flex-end;min-height:max(560px,calc(100svh - 86px));overflow:hidden;background:#1b232a;color:#fff}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#0d151ce6 0%,#0d151cb3 34%,#0d151c40 66%,#0d151c00 100%),linear-gradient(0deg,#0d151c99 0%,#0d151c00 42%)}
+.marketing-hero .hero-copy{position:relative;z-index:1;width:100%;max-width:1600px;margin:0 auto;padding:72px 4.45vw 76px}
+.marketing-hero .hero-copy h1{color:#fff;font-size:clamp(48px,5.6vw,92px);line-height:1.02;max-width:11ch}
+.marketing-hero .eyebrow{color:#bcd0ff}
+.marketing-hero .hero-lead{color:#fff;max-width:560px}
+.marketing-hero .hero-copy>p:not(.hero-lead){color:#d7dee5;max-width:470px}
+.marketing-hero .text-link{color:#fff;border-bottom-color:#ffffff80}
+.marketing-hero .hero-facts{color:#cbd5dd}
+.marketing-hero .hero-facts b{color:#fff}
+.hero-note{position:absolute;z-index:1;right:4.45vw;bottom:22px;font-size:11px;letter-spacing:.02em;color:#ffffffb8}
+@media(max-width:700px){
+  .marketing-hero{min-height:max(520px,calc(100svh - 73px))}
+  .hero-image{object-position:58% 50%}
+  .hero-shade{background:linear-gradient(0deg,#0d151cf2 0%,#0d151cc4 42%,#0d151c55 72%,#0d151c1a 100%)}
+  .marketing-hero .hero-copy{padding:40px 20px 44px}
+  .marketing-hero .hero-copy h1{font-size:44px;max-width:none}
+  .marketing-hero .hero-copy>p:not(.hero-lead){font-size:14px;line-height:1.7}
+  .hero-note{top:14px;bottom:auto;right:16px;font-size:10px}
+}
+@media(max-width:360px){.marketing-hero .hero-copy h1{font-size:38px}}
+
+/* Phone layout, 21.10.2026: less fixed chrome, swipe rows instead of tall card columns */
+@media(max-width:700px){
+  header{transition:transform 260ms var(--ease-out)}
+  .chrome-hidden header{transform:translateY(-100%)}
+  .product-nav{transition:top 260ms var(--ease-out)}
+  .chrome-hidden body[data-page=product] .product-nav{top:0}
+  body[data-page=product].price-visible .product-bar{transform:translateY(110%);visibility:hidden;transition:transform 250ms var(--ease-out),visibility 0s 250ms}
+  body[data-page=product]:not(.price-visible) .product-bar{transition:transform 250ms var(--ease-out)}
+  .companions .product-grid,.variants .product-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-right:-20px;padding-right:20px;padding-bottom:4px;scrollbar-width:none}
+  .companions .product-grid::-webkit-scrollbar,.variants .product-grid::-webkit-scrollbar{display:none}
+  .companions .product-grid>*,.variants .product-grid>*{scroll-snap-align:start}
+}
+@media(max-width:700px) and (prefers-reduced-motion:reduce){header,.product-nav,body[data-page=product] .product-bar{transition:none}}
